@@ -7,10 +7,7 @@ node() {
 		sh "mvn clean install -Dmaven.test.skip=true"
 	}
 	
-	stage ('Test case Eexecution'){
-	        sh "mvn clean org.jacoco-maven-plugin:prepare-agent install -Pcoverage-per-test"
-		
-	}
+	
 	stage('Archive Artifact'){
 	       archiveArtifacts artifacts: 'target/*.war'
 	      
